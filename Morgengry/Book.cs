@@ -34,6 +34,7 @@ namespace Morgengry
         public Book(string itemId) : this(itemId, "") { }
         
         public Book() { }
+        
 
         override
         public string ToString()

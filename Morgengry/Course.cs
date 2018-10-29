@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Morgengry
+namespace Morgengry 
 {
-    public class Course
+    public class Course : Merchandise
     {
         private string name = "";
         private int durationInMinutes = 0;
@@ -31,6 +31,7 @@ namespace Morgengry
         public Course(string name) : this(name, 0) { }
 
         public Course() { }
+
 
         override
         public string ToString()

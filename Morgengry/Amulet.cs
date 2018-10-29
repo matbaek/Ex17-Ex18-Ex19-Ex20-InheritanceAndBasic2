@@ -41,6 +41,7 @@ namespace Morgengry
         public Amulet(string itemId) : this(itemId, Level.medium) { }
 
         public Amulet() { }
+        
 
         override
         public string ToString()
