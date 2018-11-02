@@ -28,11 +28,14 @@ namespace Morgengry
             set { courseHourValue = value; }
         }
 
-        public Course(string name, int durationInMinutes)
+        public Course(string name, int durationInMinutes, double courseHourValue)
         {
             Name = name;
             DurationInMinutes = durationInMinutes;
+            CourseHourValue = courseHourValue;
         }
+
+        public Course(string name, int durationInMinutes) : this(name, durationInMinutes, 0) { }
 
         public Course(string name) : this(name, 0) { }
 
