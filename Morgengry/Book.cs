@@ -47,5 +47,10 @@ namespace Morgengry
 
             return result;
         }
+
+        public override double GetValue()
+        {
+            return Price;
+        }
     }
 }

@@ -8,18 +8,36 @@ namespace Morgengry
 {
     public class Amulet : Merchandise
     {
+        public string design = "";
         Level quality;
-        string design = "";
-        
+        private double lowQualityValue = 0;
+        private double mediumQualityValue = 0;
+        private double highQualityValue = 0;
+
+        public string Design
+        {
+            get { return design; }
+            set { design = value; }
+        }
         public Level Quality
         {
             get { return quality; }
             set { quality = value; }
         }
-        public string Design
+        public double LowQualityValue
         {
-            get { return design; }
-            set { design = value; }
+            get { return lowQualityValue; }
+            set { lowQualityValue = value; }
+        }
+        public double MediumQualityValue
+        {
+            get { return mediumQualityValue; }
+            set { mediumQualityValue = value; }
+        }
+        public double HighQualityValue
+        {
+            get { return highQualityValue; }
+            set { highQualityValue = value; }
         }
 
         public enum Level
@@ -41,10 +59,9 @@ namespace Morgengry
         public Amulet(string itemId) : this(itemId, Level.medium) { }
 
         public Amulet() { }
-        
 
-        override
-        public string ToString()
+        
+        public override string ToString()
         {
             string result = null;
 
@@ -54,5 +71,21 @@ namespace Morgengry
 
             return result;
         }
+
+        public override double GetValue()
+        {
+            if (Quality == Level.low)
+            {
+                return 12.5;
+            }
+            else if (Quality == Level.medium)
+            {
+                return 20.0;
+            }
+            else
+            {
+                return 27.5;
+            }
+        }   
     }
 }
